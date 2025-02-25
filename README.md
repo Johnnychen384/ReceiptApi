@@ -11,7 +11,7 @@ This application is containerized with Docker for easy deployment and testing.
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone git@github.com:Johnnychen384/ReceiptApi.git
    cd your-repo-name
    ```
 
