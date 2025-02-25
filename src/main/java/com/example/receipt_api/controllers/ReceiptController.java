@@ -6,6 +6,7 @@ import com.example.receipt_api.json.ReceiptRequestJson;
 import com.example.receipt_api.json.ReceiptResponseJson;
 import com.example.receipt_api.mapper.ToDomainMapper;
 import com.example.receipt_api.service.ReceiptService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class ReceiptController {
     }
 
     @PostMapping("/process")
-    public ResponseEntity<ReceiptResponseJson> processReceipt(@RequestBody ReceiptRequestJson req) {
+    public ResponseEntity<ReceiptResponseJson> processReceipt(@Valid @RequestBody ReceiptRequestJson req) {
         ReceiptResponseJson res = receiptService.processReceipt(mapper.toDomain(req));
         return ResponseEntity.ok(res);
     }

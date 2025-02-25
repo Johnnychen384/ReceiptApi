@@ -6,6 +6,9 @@ COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 
+# Make the Maven wrapper executable
+RUN chmod +x ./mvnw
+
 # Download dependencies (will be cached if pom.xml doesn't change)
 RUN ./mvnw dependency:go-offline -B
 
